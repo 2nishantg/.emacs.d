@@ -23,7 +23,8 @@
   :after evil
   :ensure t
   :config
-  (evil-collection-init))
+  (evil-collection-init '(magit vertico consult))
+  )
 
 (use-package undo-tree
   :after evil

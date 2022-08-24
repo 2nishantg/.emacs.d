@@ -15,14 +15,15 @@
       (goto-char (point-max))
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
-
 (straight-use-package 'use-package)
 
+(require 'my-defaults) 
 (require 'my-display)
 (require 'my-evil)
 (require 'my-general)
 (require 'my-vertico)
+(require 'my-navigation) 
+(require 'my-magit)
 (require 'my-eglot)
-(require 'my-golang)
 (require 'my-company)
-(require 'my-defaults) 
+(require 'my-golang)

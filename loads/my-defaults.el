@@ -4,6 +4,7 @@
 (setq kill-do-not-save-duplicates t)
 (setq save-interprogram-paste-before-kill t)
 (setq scroll-preserve-screen-position 'always)
+(setq column-number-mode t)
 (global-subword-mode 1)
 
 (recentf-mode 1)
@@ -22,6 +23,5 @@
 (define-key global-map (kbd "C-x C-m") 'execute-extended-command)
 (define-key global-map (kbd "C-x m") 'execute-extended-command)
 (define-key global-map (kbd "M-y") 'yank-from-kill-ring)
-
 
 (provide 'my-defaults)
