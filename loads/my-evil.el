@@ -28,7 +28,7 @@
 
 (use-package undo-tree
   :after evil
-  :diminish
+  :diminish undo-tree-mode
   :init
   (setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo")))
   :config

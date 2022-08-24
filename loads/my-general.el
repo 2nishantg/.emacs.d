@@ -47,6 +47,9 @@ The prefix map is named 'my-DEF-map'."
    "search" "s")
 
   (general-global-menu-definer
+   "error" "e")
+
+  (general-global-menu-definer
    "git" "g")
 
   (general-global-menu-definer

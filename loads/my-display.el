@@ -8,7 +8,11 @@
 
 (use-package ef-themes 
   :config
-  (load-theme 'ef-autumn t)
+  (load-theme 'ef-day t)
+  )
+
+(use-package hide-mode-line
+  :config
   )
 
 (provide 'my-display)
