@@ -8,18 +8,18 @@
      (vterm-send-key "k" nil nil t))
 
 
-  (add-hook 'vterm-exit-functions (lambda (buffer event)
-				    (evil-quit)
-				    (kill-buffer buffer)))
+  (add-hook   'vterm-exit-functions (lambda (buffer event)
+				      (evil-quit)
+				      (kill-buffer buffer)))
   (setq vterm-buffer-name-string "vterm @ %s")
   (general-define-key
-   :states '(normal insert)
-   :keymaps 'vterm-mode-map
-   "C-g" 'vterm--self-insert 
+   :states      '(normal insert)
+   :keymaps     'vterm-mode-map
+   "C-g"        'vterm--self-insert 
    "C-c escape" 'vterm-send-escape
-   "M-y" 'vterm-yank-pop
-   "C-z" 'vterm--self-insert
-   "C-k" 'vterm-send-C-k
+   "M-y"        'vterm-yank-pop
+   "C-z"        'vterm--self-insert
+   "C-k"        'vterm-send-C-k
    )
 
   (evil-set-initial-state 'vterm-mode 'insert)

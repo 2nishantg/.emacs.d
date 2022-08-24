@@ -2,6 +2,7 @@
   :general
   (general-global-git
     "g"    'magit-status
+    "b"    'magit-blame
     )
   :config
   ;; needed for commit message buffer

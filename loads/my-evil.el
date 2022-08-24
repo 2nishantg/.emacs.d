@@ -26,6 +26,25 @@
   (evil-collection-init '(magit vertico consult))
   )
 
+(use-package evil-commentary
+  :after evil
+  :ensure t
+  :config
+  ( evil-commentary-mode ))
+
+(use-package evil-lion
+  :after evil
+  :ensure t
+  :config
+  ( evil-lion-mode ))
+
+(use-package evil-surround
+  :after evil
+  :ensure t
+  :config
+  (global-evil-surround-mode 1))
+
+
 (use-package undo-tree
   :after evil
   :diminish undo-tree-mode
