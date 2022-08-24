@@ -1,5 +1,6 @@
 (use-package flycheck
   :after general hide-mode-line
+  :diminish
   :general
   (general-global-error
    "n"     'flycheck-next-error

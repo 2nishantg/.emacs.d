@@ -69,9 +69,9 @@
   (global-definer
     "/"   'consult-ripgrep)
 
-  :bind (;; C-c bindings (mode-specific-map)
-	 ("M-y" . consult-yank-pop)                ;; orig. yank-pop
-	 )                ;; orig. previous-matching-history-element
+  :bind (
+	 ("M-y" . consult-yank-pop)
+	 )
 
   ;; Enable automatic preview at point in the *Completions* buffer. This is
   ;; relevant when you use the default completion UI.
@@ -119,5 +119,6 @@
   (setq consult-narrow-key "<") ;; (kbd "C-+")
 
 )
+
 
 (provide 'my-vertico)

@@ -4,3 +4,5 @@
   (clean-kill-ring-mode 1)
   (setq clean-kill-ring-prevent-duplicates t)
   )
+
+(provide 'my-editing)

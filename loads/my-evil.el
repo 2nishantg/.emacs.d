@@ -44,7 +44,6 @@
   :config
   (global-evil-surround-mode 1))
 
-
 (use-package undo-tree
   :after evil
   :diminish undo-tree-mode

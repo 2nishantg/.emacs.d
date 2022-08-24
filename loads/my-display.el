@@ -18,4 +18,6 @@
   :config
   )
 
+(use-package diminish)
+
 (provide 'my-display)
