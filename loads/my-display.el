@@ -4,7 +4,10 @@
 (tool-bar-mode -1)
 (setq inhibit-startup-screen t)
 
-(set-frame-font "PragmataPro 33" nil t)
+;;(set-frame-font "PragmataPro 33" nil t)
+     
+(add-to-list 'default-frame-alist '(font . "PragmataPro 33"))
+
 
 (use-package ef-themes 
   :config

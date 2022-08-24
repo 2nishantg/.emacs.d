@@ -20,6 +20,7 @@ The prefix map is named 'my-DEF-map'."
 
   (general-define-key
    :states 'normal
+   "escape" 'keyboard-quit
    "g D" 'xref-find-references
    "g d" 'xref-find-definitions)
 

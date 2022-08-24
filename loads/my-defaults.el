@@ -24,4 +24,6 @@
 (define-key global-map (kbd "C-x m") 'execute-extended-command)
 (define-key global-map (kbd "M-y") 'yank-from-kill-ring)
 
+(global-eldoc-mode -1)
+
 (provide 'my-defaults)

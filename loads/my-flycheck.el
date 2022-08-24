@@ -15,5 +15,3 @@
   )
 
 (provide 'my-flycheck)
-
-(add-hook 'flycheck-error-list-mode #'hide-mode-line-mode)
