@@ -1,4 +1,5 @@
 history
+.lsp-session*
 projects
 straight/*
 recentf

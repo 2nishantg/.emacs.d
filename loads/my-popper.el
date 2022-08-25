@@ -22,6 +22,7 @@
           help-mode helpful-mode
           Buffer-menu-mode
 	  "^\\*Embark Collect:.*$" embark-collect-mode
+	  lsp-ui-flycheck-list-mode
 
 
           "^\\*Process List\\*" process-menu-mode
@@ -33,6 +34,7 @@
           ;; "\\*DAP Templates\\*$" dap-server-log-mode
           ;; "\\*ELP Profiling Restuls\\*" profiler-report-mode
           "\\*Flycheck errors\\*$" " \\*Flycheck checker\\*$"
+          "\\*Flymake diagnostics.*\\*$" flymake-project-diagnostics-mode
           "\\*[Wo]*Man.*\\*$"
           ;; "\\*ert\\*$" overseer-buffer-mode
           "\\*gud-debug\\*$"
