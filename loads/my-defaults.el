@@ -8,6 +8,7 @@
 (setq tab-always-indent 'complete)
 (global-subword-mode 1)
 (setq read-process-output-max (* 3 1024 1024))
+(setq-default tab-width 4)
 
 (recentf-mode 1)
 (setq recentf-max-menu-items 100)
