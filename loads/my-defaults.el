@@ -5,6 +5,7 @@
 (setq save-interprogram-paste-before-kill t)
 (setq scroll-preserve-screen-position 'always)
 (setq column-number-mode t)
+(setq tab-always-indent 'complete)
 (global-subword-mode 1)
 
 (recentf-mode 1)

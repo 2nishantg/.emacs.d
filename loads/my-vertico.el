@@ -1,10 +1,37 @@
 ;; Enable vertico
 (use-package vertico
+  :straight (vertico :files (:defaults "extensions/*")
+		     :includes (vertico-buffer
+				vertico-directory
+				vertico-flat
+				vertico-indexed
+				vertico-mouse
+				vertico-quick
+				vertico-repeat
+				vertico-reverse))
   :init
   (vertico-mode)
-  (setq vertico-count 12)
-  (setq vertico-cycle t)
+  :config
+  (setq vertico-resize nil
+	vertico-count 17
+	vertico-cycle t)
   )
+
+;; (use-package vertico-posframe
+;;   :disabled
+;;   :hook (vertico-mode . vertico-posframe-mode)
+;;   )
+
+(use-package vertico-directory
+  :after vertico
+  :ensure nil
+  ;; More convenient directory navigation commands
+  :bind (:map vertico-map
+              ("RET" . vertico-directory-enter)
+              ("DEL" . vertico-directory-delete-char)
+              ("M-DEL" . vertico-directory-delete-word))
+  ;; Tidy shadowed file names
+  :hook (rfn-eshadow-update-overlay . vertico-directory-tidy))
 
 ;; Persist history over Emacs restarts. Vertico sorts by history position.
 (use-package savehist
@@ -44,7 +71,6 @@
   ;; Configure a custom style dispatcher (see the Consult wiki)
   ;; (setq orderless-style-dispatchers '(+orderless-dispatch)
   ;;       orderless-component-separator #'orderless-escapable-split-on-space)
-  (setq orderless-matching-styles '(orderless-regexp orderless-flex))
   (setq completion-styles '(orderless basic)
         completion-category-defaults nil
         completion-category-overrides '((file (styles partial-completion)))))
@@ -68,7 +94,6 @@
     )
   (global-definer
     "/"   'consult-ripgrep)
-
   :bind (
 	 ("M-y" . consult-yank-pop)
 	 )
@@ -97,7 +122,6 @@
   ;; Configure other variables and modes in the :config section,
   ;; after lazily loading the package.
   :config
-
   ;; Optionally configure preview. The default value
   ;; is 'any, such that any key triggers the preview.
   ;; (setq consult-preview-key 'any)
@@ -117,8 +141,38 @@
   ;; Optionally configure the narrowing key.
   ;; Both < and C-+ work reasonably well.
   (setq consult-narrow-key "<") ;; (kbd "C-+")
-
 )
+
+(use-package embark
+  :ensure t
+  :bind
+  (("C-;" . embark-act)         ;; pick some comfortable binding
+   ("C-." . embark-dwim)        ;; good alternative: M-.
+   ("C-h B" . embark-bindings)) ;; alternative for `describe-bindings'
+
+  :init
+
+  ;; Optionally replace the key help with a completing-read interface
+  (setq prefix-help-command #'embark-prefix-help-command)
+
+  :config
+
+  ;; Hide the mode line of the Embark live/completions buffers
+  (add-to-list 'display-buffer-alist
+               '("\\`\\*Embark Collect \\(Live\\|Completions\\)\\*"
+                 nil
+                 (window-parameters (mode-line-format . none)))))
+
+;; Consult users will also want the embark-consult package.
+(use-package embark-consult
+  :after (embark consult)
+  :config
+  (require 'embark-consult)
+)
+
+(use-package wgrep
+  )
+
 
 
 (provide 'my-vertico)

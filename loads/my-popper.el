@@ -21,6 +21,7 @@
 
           help-mode helpful-mode
           Buffer-menu-mode
+	  "^\\*Embark Collect:.*$" embark-collect-mode
 
 
           "^\\*Process List\\*" process-menu-mode
