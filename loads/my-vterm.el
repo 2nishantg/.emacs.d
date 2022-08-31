@@ -16,7 +16,7 @@
    :states      '(normal insert)
    :keymaps     'vterm-mode-map
    "C-g"        'vterm--self-insert 
-   "C-c escape" 'vterm-send-escape
+   "C-c ESC" 'vterm-send-escape
    "M-y"        'vterm-yank-pop
    "C-z"        'vterm--self-insert
    "C-k"        'vterm-send-C-k

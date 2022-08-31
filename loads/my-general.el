@@ -45,6 +45,9 @@ The prefix map is named 'my-DEF-map'."
    )
 
   (general-global-menu-definer
+   "change" "c")
+
+  (general-global-menu-definer
    "search" "s")
 
   (general-global-menu-definer
@@ -65,6 +68,10 @@ The prefix map is named 'my-DEF-map'."
   (general-global-menu-definer
    "files" "f"
    "f"  'find-file
+   "y"  '(lambda () (interactive) (kill-new (buffer-file-name)))
+   "p"  '(lambda () (interactive) (kill-new (file-relative-name
+								   (buffer-file-name)
+								   (project-root (project-current)))))
    )
   )
 

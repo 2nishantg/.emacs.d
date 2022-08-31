@@ -13,10 +13,15 @@
          )
   :config
   (general-define-key
+   :states 'normal
    :keymaps 'lsp-mode-map
    "g t" 'lsp-find-type-definition
    [remap xref-find-references]  'lsp-find-references
    [remap xref-find-definitions] 'lsp-find-definition)
+  (general-global-change
+	"c r"    'lsp-rename
+	)
+
 
   :commands (lsp lsp-deferred))
 
@@ -25,10 +30,10 @@
   :after lsp
   :config
   (general-define-key
+   :states 'normal
    :keymaps 'lsp-mode-map
    "g K" 'lsp-ui-doc-show)
   )
-
 
 ;; ;; optionally if you want to use debugger
 ;; (use-package dap-mode)
