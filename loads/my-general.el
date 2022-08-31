@@ -62,17 +62,20 @@ The prefix map is named 'my-DEF-map'."
    "p"  'previous-buffer
    "b"  'switch-to-buffer
    "n"  'next-buffer
-   ;; "s" '((lambda () (interactive) (switch-to-buffer "*scratch*"))
-   ;;       :which-key "scratch-buffer")
    )
   (general-global-menu-definer
    "files" "f"
    "f"  'find-file
-   "y"  '(lambda () (interactive) (kill-new (buffer-file-name)))
-   "p"  '(lambda () (interactive) (kill-new (file-relative-name
+   "y"  '(lambda () (interactive) (yank-with-message (buffer-file-name)))
+   "p"  '(lambda () (interactive) (yank-with-message (file-relative-name
 								   (buffer-file-name)
 								   (project-root (project-current)))))
    )
+  (defun yank-with-message (content)
+	(interactive)
+	(kill-new content)
+	(message "Copied `%s' to clipboard" content)
+	)
   )
 
 (provide 'my-general)

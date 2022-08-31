@@ -4,9 +4,16 @@
 (tool-bar-mode -1)
 (setq inhibit-startup-screen t)
 
-;;(set-frame-font "PragmataPro 33" nil t)
-     
-(add-to-list 'default-frame-alist '(font . "PragmataPro 31"))
+(setq my-font "PragmataPro 32")
+
+(defun my-reload-font ()
+  (interactive)
+  (setq default-frame-alist (cl-remove-if (lambda (x) (eq (car x) 'font)) default-frame-alist))
+  (add-to-list 'default-frame-alist (list 'font  my-font))
+  (set-frame-font my-font  nil t)
+  )
+
+(my-reload-font)
 
 
 (use-package ef-themes 
